@@ -18,16 +18,26 @@ with open(csvpath) as csvfile:
      csv_header = next(csvreader)
      print(csv_header)
 
-     #Total Number of Months = sum(1 for row in csvfile)
-     #print(Total Number of Months)
-     count_row = 0
+   
+     #count_row = 0
+     
 
-     for row in csvreader:
-         count_row+=1
-         print(row)
+     #for row in csvreader:
+         #count_row+=1
          
-     print(count_row)
-
+         #print(row)
+     
+     #print(count_row)
+     
+     
+     sum_row = 0
+     for row in csvreader:
+         sum_row+=int(row[1])
+         #sum_row+=int(row[1])
+    
+     print(sum_row)
+     
+    
      
      
   
