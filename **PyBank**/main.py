@@ -38,11 +38,11 @@ with open(csvpath) as csvfile:
         list_of_profits.append(row[1])
 
         if count_row == 1:
-            pre_amount = int(row[1])
+            pre_amount = float(row[1])
         elif count_row > 1:
-            change = int(row[1]) - pre_amount
+            change = float(row[1]) - pre_amount
             change_list.append(change)
-            pre_amount = int(row[1])
+            pre_amount = float(row[1])
      
         
     
@@ -70,7 +70,7 @@ with open(output_path, "w") as writefile:
     writefile.writelines("------------------" + "\n")
     writefile.writelines("Total Months:" + str(count_row) + "\n")
     writefile.writelines("Total: $" + str(net_total) + "\n")
-    writefile.writelines("Average Change: $" + str(round(avergage_change_list)) + "\n")
+    writefile.writelines("Average Change: $" + str(round(avergage_change_list,2)) + "\n")
     writefile.writelines("Greatest Increase in Profits:" + str(greatest_increase_month) + "(" + "$" + str(greatest_increase) + ")" + "\n")
     writefile.writelines("Greatest Decrease in Profits:" + str(greatest_decrease_month) + "(" + "$" + str(greatest_decrease) + ")" + "\n")
     
