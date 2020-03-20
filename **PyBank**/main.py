@@ -63,8 +63,16 @@ with open(csvpath) as csvfile:
     print(str(greatest_decrease) + str(greatest_decrease_month)) 
     
     
-   
-     
+output_path = os.path.join("output.txt")
+with open(output_path, "w") as writefile:
+
+    writefile.writelines("Financial Analysis\n")
+    writefile.writelines("------------------" + "\n")
+    writefile.writelines("Total Months:" + str(count_row) + "\n")
+    writefile.writelines("Total: $" + str(net_total) + "\n")
+    writefile.writelines("Average Change: $" + str(round(avergage_change_list)) + "\n")
+    writefile.writelines("Greatest Increase in Profits:" + str(greatest_increase_month) + "(" + "$" + str(greatest_increase) + ")" + "\n")
+    writefile.writelines("Greatest Decrease in Profits:" + str(greatest_decrease_month) + "(" + "$" + str(greatest_decrease) + ")" + "\n")
     
      
      
