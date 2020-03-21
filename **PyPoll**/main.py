@@ -27,6 +27,7 @@ with open(csvpath) as csvfile:
     number_of_votes = []
     poll ={}
     percentage_of_vote = []
+    winner = []
     #Put number of votes to zero
     total_of_votes = 0
     
@@ -58,12 +59,19 @@ with open(csvpath) as csvfile:
     #Zipps the previous derived 3 lists into one (summary_data)
     summary_data = list(zip(final_list_of_candidates, percentage_of_vote, number_of_votes))
 
+    #Loops through summary list and finds out the highest number and adds the name beloning to this number to the winner list
+    for candidate in summary_data:
+        if max(number_of_votes) == candidate[2]:
+            winner.append(candidate[0])
+
     #print(list_of_candidates)
     print(total_of_votes)
     #print(number_of_votes)
     #print(final_list_of_candidates)
     #print(percentage_of_vote)
     print(summary_data)
+    print(winner)
 
     
+
 
