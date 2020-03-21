@@ -26,6 +26,7 @@ with open(csvpath) as csvfile:
   
     #Create Lists to be filled in the Loop
     list_of_candidates =[]
+    final_list_of_candidates = []
     number_of_votes = []
     poll ={}
     total_of_votes = 0
@@ -39,8 +40,17 @@ with open(csvpath) as csvfile:
         #candidates+=int(row[2])
         list_of_candidates.append(row[2])
 
-        for x in list_of_candidates:
-            if x == 
+        if row [2] in poll.keys():
+            poll[row[2]] = poll[row[2]]+1
+
+        else:
+            poll[row[2]] = 1
+
+    for key, value in poll.items():
+        final_list_of_candidates.append(key)
+        number_of_votes.append(value)
 
     print(total_of_votes)
-    print(list_of_candidates)
+    print(number_of_votes)
+    print(final_list_of_candidates)
+    #print(list_of_candidates)
